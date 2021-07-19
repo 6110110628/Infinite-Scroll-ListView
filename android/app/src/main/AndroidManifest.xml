@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.flutterthailand.infinite_scroll_list_view">
    <application
-        android:label="Starwars"
+        android:label="Star Wars"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
