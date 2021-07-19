@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Starwars'),
+          title: Text('Starwars List'),
         ),
         body: StarwarsList(),
       ),

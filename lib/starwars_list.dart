@@ -96,9 +96,15 @@ class _StarwarsListState extends State<StarwarsList> {
             return Card(
               child: Column(
                 children: <Widget>[
-                  Image.network(
-                    'https://starwars-visualguide.com/assets/img/characters/${people.no}.jpg',
-                  ),
+                  Container(
+                      width: 80,
+                      height: 80,
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundColor: Colors.transparent,
+                        foregroundImage: NetworkImage(
+                            'https://starwars-visualguide.com/assets/img/characters/${people.no}.jpg'),
+                      )),
                   Padding(
                       padding: const EdgeInsets.all(16),
                       child: Column(
