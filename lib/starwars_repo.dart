@@ -1,12 +1,44 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 
 class People {
-  final String name;
-  People(this.name);
+  String? name;
+  String? height;
+  String? mass;
+  String? birthYear;
+  String? gender;
+  String? homeworld;
+  String? hairColor;
+  String? skinColor;
+  String? eyeColor;
+  int? no;
 
-  factory People.fromJson(dynamic data) {
-    return People(data['name']);
-  }
+  People(
+      {@required this.name,
+      @required this.height,
+      @required this.mass,
+      @required this.birthYear,
+      @required this.gender,
+      @required this.homeworld,
+      @required this.hairColor,
+      @required this.skinColor,
+      @required this.eyeColor,
+      @required this.no});
+
+  factory People.fromJson(Map<String, dynamic> json) => People(
+        name: json["name"],
+        height: json["height"],
+        mass: json["mass"],
+        hairColor: json["hair_color"],
+        skinColor: json["skin_color"],
+        eyeColor: json["eye_color"],
+        birthYear: json["birth_year"],
+        gender: json["gender"],
+        homeworld: json["homeworld"],
+        no: int.parse(json["url"]
+            .toString()
+            .substring(29, json["url"].toString().length - 1)),
+      );
 }
 
 class StarwarsRepo {
