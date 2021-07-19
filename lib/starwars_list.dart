@@ -66,7 +66,9 @@ class _StarwarsListState extends State<StarwarsList> {
           itemCount: _people.length + (_hasMore ? 1 : 0),
           itemBuilder: (context, index) {
             if (index == _people.length - _nextPageThreshold) {
-              if (_pageNumber < 10) fetchPeople();
+              if (_pageNumber < 10) {
+                fetchPeople();
+              }
             }
             if (index == _people.length) {
               if (_error) {
